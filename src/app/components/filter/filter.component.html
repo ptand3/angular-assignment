@@ -1,0 +1,25 @@
+<div class="filter-component">
+    <h3>Filter</h3>
+    <span class="species">
+        <h3>Species</h3>
+        <label class="container">Human
+            <input  (change)="getChanged()" type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Mytholog
+            <input  (change)="getChanged()" type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+        </label>
+    </span>
+    <span class="gender">
+        <h3>Gender</h3>
+        <label class="container">Female
+            <input (change)=" getGender()" [(ngModel)] ="filter.female" type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Male
+            <input (ngModelchange)=" getGender()" [(ngModel)] ="filter.male"  type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+        </label>
+    </span>
+</div>

@@ -1,0 +1,15 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../out-tsc/e2e",
+    "resolveJsonModule": true,  //to enable importiNG json file
+   " esModuleInterop": true,
+    "module": "commonjs",
+    "target": "es5",
+    "types": [
+      "jasmine",
+      "jasminewd2",
+      "node"
+    ]
+  }
+}

@@ -1,0 +1,76 @@
+
+<div class="card-wrapper">
+    <span class="search-container">
+        <span>
+            <h3>Search</h3>
+        </span>
+        <input name="searchText"  type="text" [(ngModel)]="searchText" placeholder="Search By name" />
+    </span>
+    <span class="sort-container">
+        <h3>Sort id</h3>
+        <select id="cards" class="cards-order" [(ngModel)]="fieldName" >
+            <option  class="values" value="asc">Ascending</option>
+            <option  class="values" value="desc">Descending</option>
+          </select>
+    </span>
+    <!-- <span class="filter-container">
+        <h3>Filter</h3>
+        <span class="species">
+            <h3>Species</h3>
+            <label class="container">Human
+                <input (ngModelchange)="getChanged()" [(ngModel)]="fieldName" type="checkbox" checked="checked">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Mytholog
+                <input (ngModelchange)="getChanged()" [(ngModel)]="fieldName" type="checkbox" checked="checked">
+                <span class="checkmark"></span>
+            </label>
+        </span>
+    </span> -->
+</div>
+
+<!--To show the searched items-->
+<div *ngIf="(cardItems |search : searchText).length >0; else noResults">
+    <div class="row">
+        <div class="col-4 col-sm-4 col-md-4 col-lg-4 card-container"
+            *ngFor="let cardItem of cardItems | sort : 'id': fieldName | search : searchText |filter :'species' :fieldName ; let i=index">
+            <img src={{cardItem.image}} alt={{cardItem.name}} />
+            <span class="details">
+                <span class="name-id">
+                    <span class="name">{{cardItem.name}}</span>
+                    <span class="id">ID: {{cardItem.id}}</span>
+                </span>
+                <table>
+                    <tr>
+                        <td class="type">Status</td>
+                        <td>{{cardItem.status}}</td>
+                    </tr>
+                    <tr>
+                        <td class="type">Species</td>
+                        <td>{{cardItem.species}}</td>
+                    </tr>
+                    <tr>
+                        <td class="type">Gender</td>
+                        <td>{{cardItem.gender}}</td>
+                    </tr>
+                    <!-- <tr>
+                                <td>Origin</td>
+                                <td>{{cardItem.status}}</td>
+                            </tr>
+                            <tr>
+                                <td>Location</td>
+                                <td>{{cardItem.status}}</td>
+                            </tr> -->
+                </table>
+
+            </span>
+
+
+
+        </div>
+    </div>
+
+    <ng-template #noResults>
+        <p>No results found for "{{searchText}}".</p>
+    </ng-template>
+</div>

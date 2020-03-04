@@ -1,0 +1,218 @@
+.card-wrapper {
+  display: flex;
+  flex-direction: row;
+  margin: 15px;
+
+  .search-container {
+    text-align: start;
+    width: 50%;
+
+    h3 {
+      font-size: 20px;
+      font-family: 'Bigelow Rules';
+      font-size: 72px;
+      color: #0ccac4;
+      padding: 0;
+    }
+
+    input {
+      width: 80%;
+    }
+  }
+
+  .sort-container {
+    text-align: center;
+    width: 50%;
+    position: relative;
+
+    .cards-order {
+      display: block;
+      position: absolute;
+      top: 75px;
+      width: 80%;
+      .values{
+        font-size: 40px;
+        color:#262626;
+        font-family: 'Bigelow Rules';
+      }
+    }
+  }
+
+  .filter-container{
+    margin: 15px;
+    .species {
+        display: block;
+        border: 1px solid #fff;
+        background-color: white;
+        width: 250px;
+        padding: 10px;
+        margin: 5px auto;
+
+        h3 {
+            font-family: 'Bigelow Rules';
+            font-size: 50px;
+            color: #0ccac4;
+            padding: 0;
+        }
+
+        .container {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 18px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+
+            input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+
+                &:checked~.checkmark {
+
+                    background-color: #eee;
+                }
+
+                &:checked~.checkmark ::after {
+                    display: block;
+                }
+            }
+
+            .checkmark {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 25px;
+                width: 25px;
+
+                background-color: #2196F3;
+
+                &::after {
+                    left: 9px;
+                    top: 5px;
+                    width: 5px;
+                    height: 10px;
+                    border: solid black;
+                    border-width: 0 3px 3px 0;
+                    -webkit-transform: rotate(45deg);
+                    -ms-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                }
+
+
+                &::after {
+                    content: "*";
+                    left: 9px;
+                    top: 5px;
+                    width: 5px;
+                    height: 10px;
+                    border: solid white;
+                    border-width: 0 3px 3px 0;
+
+                    position: absolute;
+                    display: none;
+                }
+            }
+        }
+    }
+  }
+}
+
+h3 {
+  font-size: 15px;
+  font-family: 'Bigelow Rules';
+  font-size: 72px;
+  color: #0ccac4;
+  padding: 0;
+}
+
+
+
+
+.row {
+  //  width:100%;
+  margin: 12px;
+
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #262626;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
+    margin: 10px;
+    // max-width: 218px;
+    max-width: 22%;
+
+    img {
+      width: 100%;
+      // width: 180px;
+      height: 180px;
+    }
+
+    .details {
+      // width: 180px;
+      width: 100%;
+      height: 180px;
+      display: block;
+      background: #262626;
+      color: #fff;
+      font-size: 12px;
+
+      .name-id {
+        display: block;
+        width: 100%;
+        background: #262626;
+        color: #ff8533;
+        font-size: 16px;
+        position: relative;
+        top: -55px;
+        padding: 7px;
+        opacity: 1.35;
+        opacity: 0.9;
+
+        .id {
+          display: block;
+          font-size: 14px;
+        }
+      }
+
+      table {
+        width: 100%;
+        position: relative;
+        top: -50px;
+
+        tr {
+          border-bottom: 1px solid #fff;
+          height: 50px;
+
+          .type {
+            color: #fff;
+          }
+
+          td {
+            padding: 0;
+            text-align: center;
+            color: #ff8533;
+          }
+        }
+      }
+    }
+  }
+
+
+  .card-container:hover {
+    transform: scale(1.05);
+  }
+}

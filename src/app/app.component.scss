@@ -1,0 +1,36 @@
+// .App {
+//     text-align: center;
+// }
+
+// .App-logo {
+//     height: 40vmin;
+// }
+
+
+h1 {
+    text-align: center;
+    font-family: 'Bigelow Rules';
+    font-size: 72px;
+    color: #0ccac4;
+}
+
+.main-app {
+    max-width: 1280px; //desktop
+    background: darkcyan;
+    margin: 10px auto;
+    display: flex;
+    /* flex-direction: column; */
+    flex-direction: row;
+
+    .left-wrapper {
+        display: inline-block;
+        width: 25%;
+    }
+
+    .right-wrapper {
+        width: 75%;
+        display: inline-block;
+
+
+    }
+}
